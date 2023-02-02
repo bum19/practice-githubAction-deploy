@@ -1,4 +1,3 @@
-name: Java CI with Gradle
 
 on:
   push:
@@ -15,7 +14,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 11
@@ -23,19 +21,11 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-
-      #      - uses: actions/checkout@v3
-      #      - run : touch ./server/src/main/resources/application.yml
-      #      - run : echo "${{secrets.BE_APPLICATION}}" > ./server/src/main/resources/application.yml
-
-      - name : Add permission
-        run : chmod +x ./server/gradlew
-
+      - name: Run chmod to make gradlew executable
+        run: chmod +x ./server/gradlew
       - name: Build with Gradle
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
           arguments: build
-          # Path to the root directory of the build
-          build-root-directory: ./server
-          # Path to the Gradle executable
-          gradle-executable: ./server
+          build-root-directory : ./server
+          gradle-executabae : ./server
