@@ -23,7 +23,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - uses: actions/checkout@v3
+      - name: set application.yml
       - run : touch ./server/src/main/resources/application.yml
       - run : echo "${{secrets.BE_APPLICATION}}" > ./server/src/main/resources/application.yml
 
@@ -42,12 +42,12 @@ jobs:
           # Path to the Gradle executable
           #gradle-executable: ./server
 
-      # build한 후 프로젝트를 압축합니다.
-      - name: Make zip file
-        run: zip -r ./practice-deploy.zip .
-        working-directory: ./server
-        shell: bash
-
+#      # build한 후 프로젝트를 압축합니다.
+#      - name: Make zip file
+#        run: zip -r ./practice-deploy.zip .
+#        working-directory: ./server
+#        shell: bash
+#
 #      # Access Key와 Secret Access Key를 통해 권한을 확인합니다.
 #      # 아래 코드에 Access Key와 Secret Key를 직접 작성하지 않습니다.
 #      - name: Configure AWS credentials
