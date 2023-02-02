@@ -35,7 +35,6 @@ jobs:
         with:
           arguments: build
           build-root-directory: ./server
-          gradle-executable: ./server
 
 #      # build한 후 프로젝트를 압축합니다.
 #      - name: Make zip file
