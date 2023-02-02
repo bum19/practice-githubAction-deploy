@@ -23,7 +23,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - name: set application.yml
       - run : touch ./server/src/main/resources/application.yml
       - run : echo "${{secrets.BE_APPLICATION}}" > ./server/src/main/resources/application.yml
 
