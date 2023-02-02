@@ -33,13 +33,14 @@ jobs:
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
         
       - name: Build with Gradle
-        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
-        with:
-          arguments: build
-          # Path to the root directory of the build
-          build-root-directory: ./server
-          # Path to the Gradle executable
-          #gradle-executable: ./server
+        run : ./server/gradlew build
+#        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+#        with:
+#          arguments: build
+#          # Path to the root directory of the build
+#          build-root-directory: ./server
+#          # Path to the Gradle executable
+#          #gradle-executable: ./server
 
 #      # build한 후 프로젝트를 압축합니다.
 #      - name: Make zip file
